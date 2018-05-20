@@ -1,0 +1,16 @@
+<h1>ブログ一覧</h1>
+<table>
+  <tr>
+    <td>ID</td>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr>
+
+  <tr>
+    <td><%= @blog.id %></td>
+    <td><%= @blog.title %></td>
+    <td><%= @blog.content %></td>
+  </tr>
+</table>
+
+<%= link_to "一覧へ戻る" , blog_path %>

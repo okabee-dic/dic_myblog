@@ -1,0 +1,35 @@
+<h1>ブログ一覧</h1>
+<p><%= notice %></p>
+<div class="topimg">
+  <div class="container">
+    <div class="row">
+      <div class="topimg_text col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
+        ブログ一覧画面です。
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container blogarea">
+  
+  <div class="row">
+<% @blogs.each do |blog| %>
+  
+    <div class="blogitem col-md-3 col-sm-6 col-xs-12">
+      <div class="blogitem_inner">
+        <h3><%= blog.title %></h3>
+        <div>
+          <p><%= blog.content %></p>
+          <p><%= link_to "編集する" , edit_blog_path( blog.id ), {:class => "btn btn-primary"} %></p>
+          <p><div class="btn btn-danger"><%= link_to 'ブログを削除する', blog_path(blog.id) , data: { confirm: 'Are you sure?' },
+          method: :delete %></div></p>
+        </div>
+      </div>
+    </div>    
+<% end %>
+  </div>
+</div>  <!-- end blogarea  -->
+<div class="newBtnArea container ">
+<button class="btn btn-primary textWhite">
+  <%= link_to "新規作成" , new_blog_path %>
+</button>
+</div>

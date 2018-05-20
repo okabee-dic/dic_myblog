@@ -1,0 +1,108 @@
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-color: #f2e4e9;
+  box-sizing: border-box;
+  
+}
+
+html, body{
+	margin: 0;	/* 余白の削除 */
+	padding: 0;	/* 余白の削除 */
+	height: 100%;	/* 縦の高さを100% */
+	width: 100%;	/* 横の幅を100% */
+}
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.topimg {
+  height: 480px;
+  background-image: image-url("mv.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+  img {
+    width :100%;
+    height:auto;
+  }
+  
+  .topimg_text{
+    
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    position: relative;
+    
+    top: 180px;
+    font-size: 36px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  
+}
+
+.blogarea {
+  
+  margin-top: 10px;
+  
+}
+
+.blogitem {
+  padding: 8px;
+  
+  .blogitem_inner {
+    background-color: #fff;
+    padding: 8px;
+    .btn-danger a {
+      color: white !important;
+      text-decoration: none;
+    }
+  }
+  
+  h3 {
+    border-bottom: 1px dashed #222;
+    margin-top: 0;
+  }
+}
+
+.newBtnArea {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.blog_form {
+  margin-left: 20px;
+}
+
+h2 {
+  margin-left: 20px;
+}
+
+.bodyContainer {
+  position: relative;
+  padding-bottom: 40px;
+  min-height: 100%;;
+}
+
+footer {
+  background-color: #4D4D4D;
+  height: 40px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
+
+.textWhite a{
+  color: white;
+}
