@@ -1,5 +1,4 @@
 <h1>ブログ一覧</h1>
-<p><%= notice %></p>
 <div class="topimg">
   <div class="container">
     <div class="row">
@@ -19,9 +18,11 @@
         <h3><%= blog.title %></h3>
         <div>
           <p><%= blog.content %></p>
+          <% if logged_in? %>
           <p><%= link_to "編集する" , edit_blog_path( blog.id ), {:class => "btn btn-primary"} %></p>
           <p><div class="btn btn-danger"><%= link_to 'ブログを削除する', blog_path(blog.id) , data: { confirm: 'Are you sure?' },
           method: :delete %></div></p>
+          <% end %>
         </div>
       </div>
     </div>    
@@ -29,7 +30,11 @@
   </div>
 </div>  <!-- end blogarea  -->
 <div class="newBtnArea container ">
+<% if logged_in? %>
 <div class="btn btn-primary textWhite btn-newblog">
+  
   <%= link_to "新規作成" , new_blog_path %>
+  
 </div>
+<% end %>
 </div>

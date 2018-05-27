@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-    
+  before_action :check_login, only: [:edit, :new, :confirm, :destroy, :update, :create]  
   def index
     @blogs = Blog.all
     
@@ -56,6 +56,15 @@ class BlogsController < ApplicationController
   private
   def blog_params
     params.require(:blog).permit(:title, :content)
+  end
+  
+  def check_login
+    if logged_in?
+      
+    else
+      redirect_to new_session_path
+    end
+      
   end
   
   # idをキーとして値を取得するメソッド
