@@ -83,6 +83,10 @@ h1 {
 
 .blog_form {
   margin-left: 20px;
+  
+  label {
+    width: 100px;
+  }
 }
 
 h2 {
@@ -111,11 +115,12 @@ footer {
   color: white;
 }
 
-.blog_content {
+.blog_content, .blog_title {
   display: flex;
+  margin-bottom: 8px;
   
   .blog_label {
-    margin-right: 10px;
+    /*margin-right: 10px;*/
   }
 }
 
