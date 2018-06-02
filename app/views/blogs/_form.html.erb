@@ -18,8 +18,8 @@
       <%= form.text_field :title %>
     </div>
     <div class="blog_content">
-      <%= form.label :content %>
-      <%= form.text_area :content, :size : "100x50" %>
+      <%= form.label :content ,:class => "blog_label" %>
+      <%= form.text_area :content, :class => "blog_textarea" ,:size => "100x10" %>
       <input type="hidden" name="test" value="test" />
     </div>
     <%= form.submit %>

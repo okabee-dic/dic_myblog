@@ -111,6 +111,14 @@ footer {
   color: white;
 }
 
+.blog_content {
+  display: flex;
+  
+  .blog_label {
+    margin-right: 10px;
+  }
+}
+
 .blog_show_table {
   td, th {
     border: 1px solid #222;
