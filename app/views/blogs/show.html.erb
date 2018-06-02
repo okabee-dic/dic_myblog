@@ -1,7 +1,7 @@
 <h1>ブログ一覧</h1>
-<table>
+<table class="blog_show_table">
   <tr>
-    <td>ID</td>
+    <th>ID</th>
     <th>タイトル</th>
     <th>内容</th>
   </tr>
@@ -12,5 +12,15 @@
     <td><%= @blog.content %></td>
   </tr>
 </table>
+
+<% unless @blog.user == current_user %>
+  <% if @favorite.present? %>
+    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
+
+<p>著者：<%= @blog.user_id %></p>
 
 <%= link_to "一覧へ戻る" , blog_path %>

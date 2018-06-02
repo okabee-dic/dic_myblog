@@ -28,7 +28,7 @@
         <% current_user %>
         <li><%= link_to "新規作成" , new_blog_path %></li>
         <li><%= link_to "ログアウト" , session_path(@current_user), method: :delete %></li>
-        <li><a href="">menu2</a></li>
+        <li><%= link_to current_user.email , user_path(@current_user) %> </a></li>
         <% else %>
         <li><%= link_to "ログイン" , new_session_path %></li>
         <li><%= link_to "新規登録" , new_user_path %></li>

@@ -15,14 +15,15 @@
   
     <div class="blogitem col-md-3 col-sm-6 col-xs-12">
       <div class="blogitem_inner">
-        <h3><%= blog.title %></h3>
+        <h3><%= link_to blog.title , blog_path(blog.id) %></h3>
         <div>
           <p><%= blog.content %></p>
-          <% if logged_in? %>
+          <% if logged_in? && current_user.id == blog.user_id %>
           <p><%= link_to "編集する" , edit_blog_path( blog.id ), {:class => "btn btn-primary"} %></p>
           <p><div class="btn btn-danger"><%= link_to 'ブログを削除する', blog_path(blog.id) , data: { confirm: 'Are you sure?' },
           method: :delete %></div></p>
           <% end %>
+          <p>writer:&nbsp;<%= blog.user.name %></p>
         </div>
       </div>
     </div>    
