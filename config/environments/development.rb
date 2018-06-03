@@ -53,5 +53,8 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
   # only in cloud9
-  BetterErrors::Middleware.allow_ip! "0.0.0.0/0"  
+  BetterErrors::Middleware.allow_ip! "0.0.0.0/0" 
+  
+  config.action_mailer.default_url_options = { host: 'railstest-okabee326.c9users.io/' }
+  config.action_mailer.delivery_method = :letter_opener
 end
