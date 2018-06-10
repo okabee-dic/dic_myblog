@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :feeds
   resources :contacts
   get 'sessions/new'
 
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :update]
   resources :sessions, only: [:new, :create, :destroy]
   resources :favorites, only: [:create, :destroy]
   

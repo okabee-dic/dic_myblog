@@ -13,6 +13,7 @@
 
 
 <%= form_with(model: @user, local: true) do |f| %>  
+<div>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
@@ -24,6 +25,11 @@
 
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
+</div>
+<div>
+  <p>プロフィール画像</p>
+  <%= f.file_field :image %>
+</div>
 
   <%= f.submit "Create my account" %>
 <% end %>

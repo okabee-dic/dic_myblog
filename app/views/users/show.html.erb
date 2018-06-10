@@ -1,7 +1,35 @@
+
+
 <h1><%= @user.name %>のページ</h1>
 
 <p>メールアドレス: <%= @user.email %></p>
 
+<div class="user_image">
+  <p>プロフィール画像</p>
+  <%= image_tag @user.image %>
+  
+<%= form_with(model: @user, local: true) do |form| %>
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= hidden_field_tag :name, @user.name %>
+  <%= hidden_field_tag :email, @user.email %>
+  
+  <%= form.file_field :image , id: :feed_image %>
+  <%= form.submit %>
+<% end %>
+  
+</div>
+
+<div class="favorite_list">
 <table>
   <tr>
     <td>お気に入りに登録された投稿</td>
@@ -13,3 +41,4 @@
   </tr>
 <% end %>
 </table>
+</div>
