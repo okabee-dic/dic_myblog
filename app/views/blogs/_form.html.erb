@@ -23,6 +23,7 @@
       <input type="hidden" name="test" value="test" />
     </div>
     <div class="blog_image">
+      <%= image_tag @blog.image %>
       <%= form.file_field :image %>
     </div>
     <%= form.submit %>
